@@ -1,0 +1,95 @@
+---
+layout: default
+---
+{% include breadcrumb-3.html %}
+
+<div class="container">
+  <h1><small class="header-small">Module: </small> {{ page.morea_page.title }} </h1>
+  <p>{{ page.morea_page.content | markdownify }}</p>
+  {% if page.morea_page.morea_start_date_string %}
+    <p>Dates: {{ page.morea_page.morea_start_date_string }} - {{ page.morea_page.morea_end_date_string }}</p>
+  {% endif %}
+</div>
+
+{% unless page.morea_page.morea_prerequisites.size == 0 %}
+<div class="{% cycle 'section-background-1', 'section-background-2' %}">
+  <div class="container">
+    <h2>Prerequisite Modules</h2>
+    <div class="row">
+    {% for page_id in page.morea_page.morea_prerequisites %}
+    {% assign module = site.morea_page_table[page_id] %}
+      {% include entity-card.html url=module.morea_url icon_url=module.morea_icon_url title=module.title summary=module.content labels=module.morea_labels %}
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endunless %}
+
+
+{% unless page.morea_page.morea_outcomes.size == 0 %}
+<div class="{% cycle 'section-background-1', 'section-background-2' %}">
+  <div class="container">
+    <h2>Learning Outcomes</h2>
+
+    {% for page_id in page.morea_page.morea_outcomes %}
+      {% assign outcome = site.morea_page_table[page_id] %}
+      <h3>{{ outcome.title }}</h3>
+      <p>
+        {% for label in outcome.morea_labels %}
+        <span class="badge">{{ label }}</span>
+        {% endfor %}
+      </p>
+      {{ outcome.content | markdownify }}
+    {% endfor %}
+
+  </div>
+</div>
+{% endunless %}
+
+
+
+{% unless page.morea_page.morea_readings.size == 0 %}
+<div class="{% cycle 'section-background-1', 'section-background-2' %}">
+  <div class="container">
+  <h2>Readings</h2>
+
+    <div class="row">
+      {% for page_id in page.morea_page.morea_readings %}
+        {% assign reading = site.morea_page_table[page_id] %}
+        {% include entity-card.html url=reading.morea_url title=reading.title summary=reading.morea_summary labels=reading.morea_labels %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endunless %}
+
+{% unless page.morea_page.morea_experiences.size == 0 %}
+<div class="{% cycle 'section-background-1', 'section-background-2' %}">
+  <div class="container">
+  <h2>Experiential Learning</h2>
+    <div class="row">
+      {% for page_id in page.morea_page.morea_experiences %}
+        {% assign experience = site.morea_page_table[page_id] %}
+        {% include entity-card.html url=experience.morea_url title=experience.title summary=experience.morea_summary labels=experience.morea_labels %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endunless %}
+
+{% unless page.morea_page.morea_assessments.size == 0 %}
+<div class="{% cycle 'section-background-1', 'section-background-2' %}">
+  <div class="container">
+    <h2>Assessments</h2>
+    <div class="row">
+    {% for page_id in page.morea_page.morea_assessments %}
+      {% assign assessment = site.morea_page_table[page_id] %}
+    {% include entity-card.html url=assessment.morea_url title=assessment.title summary=assessment.morea_summary labels=assessment.morea_labels outcomes=assessment.morea_outcomes_assessed_titles %}
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endunless %}
+
+
+

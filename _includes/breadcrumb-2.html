@@ -1,0 +1,14 @@
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        {% if site.morea_head_breadcrumb_link %}
+        <li class="breadcrumb-item"><a href="{{ site.morea_head_breadcrumb_link }}">{{ site.morea_head_breadcrumb_label }}</a></li>
+        {% endif %}
+        <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
+        <li class="breadcrumb-item active">{{ page.title }}</li>
+      </ol>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<!-- Internal fragment for displaying reading, experience, prereq cards. Prereqs have icons. -->
+<div class="col-md-6 col-lg-4" style="padding-bottom: 20px">
+  <div class="card h-100">
+    {% if include.icon_url %}
+      <div class="text-center">
+        <img alt="{{include.title}}" src="{{ include.icon_url }}" class="card-img-top rounded-circle" style="max-width: 100px; padding-top: 2px">
+      </div>
+    {% endif %}
+    <div class="card-body">
+      <h4 class="card-title">{{ include.title }}</h4>
+      {{ include.summary | markdownify }}
+
+    {% if include.outcomes %}
+      <p>
+        <em>Outcome(s) assessed:</em>
+        {% for outcome in include.outcomes %}
+          {{ outcome }}{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
+    </div>
+
+    <div style="border-top-color: transparent" class="card-footer bg-body">
+      {% for label in include.labels %}
+      <span class="badge bg-primary">{{ label }}</span>
+      {% endfor %}
+    </div>
+    <a href="{{ include.url }}" class="stretched-link"></a>
+  </div>
+</div>

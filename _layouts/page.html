@@ -1,0 +1,13 @@
+---
+layout: core
+---
+{% include breadcrumb-4.html %}
+
+{% if page.topdiv == 'container' %}
+<div class="container">
+  {{ content }}
+</div>
+{% else %}
+{{ content }}
+{% endif %}
+

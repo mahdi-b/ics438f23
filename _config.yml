@@ -1,0 +1,37 @@
+# MOREA CONFIGURATION FILE
+# See https://morea-framework.github.io/docs/instructors/config-yml
+
+# SITE SPECIFIC: The following fields are typically changed for each site
+name: ICS 199
+baseurl: /morea
+morea_theme: spacelab
+timezone: Pacific/Honolulu
+morea_navbar_items:
+  - Prerequisites
+  - Modules
+  - Outcomes
+  - Readings
+  - Experiences
+  - Assessments
+  - Schedule
+logger_factory:
+  Morea: error
+
+# MOREA PORTAL: The following fields are only needed if this site is part of a "Morea Portal".
+# morea_course: ics311
+# morea_domain: http://morea-framework.github.io/
+# morea_google_analytics_tracking_id: "<your tracking id here>"
+# morea_head_breadcrumb_link: "http://cnn.com"
+# morea_head_breadcrumb_label: "CNN Site"
+
+# INTERNAL CONFIGURATION: The following fields are not normally edited by users.
+markdown: kramdown
+kramdown:
+  hard_wrap: false
+  input: GFM
+  syntax_highlighter: rouge
+mathjax: true
+exclude: [morea]
+keep_files: [schedule/schedule-info.js]
+plugins:
+  - jekyll-gist

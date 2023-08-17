@@ -1,0 +1,40 @@
+<script src="//cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+
+<!---
+  If you want to include a chart, you must supply the following parameters in your page's YAML:
+    morea_chartjs_labels: An array of strings reprsenting each bar in the histogram.
+    morea_chartjs_data: An array of numbers, one per label.
+    morea_chartjs_colors: An array of colors, one per label
+  Note that the syntax is pretty weird: the YAML specifies a string which is inserted below and then evaluated.
+-->
+
+<div class="row">
+  <div class="col-md-6 col-lg-6">
+    <canvas id="{{ page.morea_id }}" ></canvas>
+  </div>
+</div>
+
+<script>
+  const data = {{ page.morea_chartjs_data }};
+  const colors = {{ page.morea_chartjs_colors}};
+  const labels = {{ page.morea_chartjs_labels }};
+
+  // Get the context of the canvas element we want to select
+  var ctx = document.getElementById("{{ page.morea_id}}").getContext("2d");
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: data,
+        backgroundColor: colors,
+        borderColor: colors,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: { y: { beginAtZero: true } },
+      plugins: { legend: { display: false } }
+    }
+  });
+</script>
