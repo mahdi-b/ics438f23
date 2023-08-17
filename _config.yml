@@ -2,8 +2,8 @@
 # See https://morea-framework.github.io/docs/instructors/config-yml
 
 # SITE SPECIFIC: The following fields are typically changed for each site
-name: ICS 199
-baseurl: /morea
+name: ICS 438 F23
+baseurl: /ics438f23
 morea_theme: spacelab
 timezone: Pacific/Honolulu
 morea_navbar_items:
