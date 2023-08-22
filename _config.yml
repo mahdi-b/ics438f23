@@ -7,7 +7,6 @@ baseurl: /ics438f23
 morea_theme: spacelab
 timezone: Pacific/Honolulu
 morea_navbar_items:
-  - Prerequisites
   - Modules
   - Outcomes
   - Readings

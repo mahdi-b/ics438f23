@@ -5,34 +5,35 @@ morea_type: home
 published: true
 ---
 
-## Welcome to ICS 199, Fall 2021
+## Welcome to ICS 438, Fall 2023
 
-<div class="alert alert-danger" role="alert" markdown="1">
 
-  <i class="fa-solid fa-circle-exclamation fa-xl"></i> **Warning: this is not a website for a real course.**
-  <hr/>
-  
-  It is actually the "demo" site for the Morea Framework. 
+The course introduces students to analytics principles in big data with an emphasis on natural language processing and text analysis. The course syllabus can be found
+[here](https://docs.google.com/document/d/1q_o8-Lsown96PpbDHTh9dLxA9T0Gl_j1pISgJYJXuzE).
 
-  See the <a href="https://morea-framework.github.io">Morea Framework Project Site</a> for details.
-</div>
+#### Overview
 
-ICS 199 is a four week overview of selected topics in computer science, including Javascript, Open Source Software, and Ethics.
 
-## Who should take this course
+Data collection and generation have become more efficient and
+cost-effective. Consider that an individual in a high-income country
+produces roughly megabytes of data every second. Yet, in the face of
+such technological progress, we find ourselves overwhelmed with
+information yet starved for knowledge. A significant reason for this
+dilemma may be the shortage of data-proficient professionals capable
+of extracting meaningful insights, whether scientific, economic, or
+social, from this abundance of data.
 
-This course is intended for undergraduates in computer science or computer engineering who have a working knowledge of at least one programming language and who want to get a taste of important topics in the field.
+In the realm of data analytics, one encounters a spectrum of
+challenges, from the initial stages of data ingestion and management
+to the nuanced areas of analysis, representation, and articulation. In
+this course, we will delve into core big data principles, paying
+particular attention to textual data. Our primary aim is to acquaint
+you with hands-on methods and instrumental tools to efficiently
+handle, scrutinize, and illustrate extensive datasets.
 
-## Pedagogy
 
-ICS 199 is structured as a sequential series of [modules](/modules), each taking approximately a week to complete. Each module has the following structure:
 
-  * [Prerequisites](/prerequisites), describing skills you should have prior to starting the module.
-  * [Learning outcomes](/outcomes), describing the major goals for the module.
-  * [Readings and other online resources](/readings), providing background material.
-  * [Experiential learning activities](/experiences), providing a structured set of challenges enabling you to acquire mastery of material.
-  * [Assessments](/assessments), which help you determine if you have acquired mastery of the material.
-
-## About the instructor
-
-[Philip Johnson](https://philipmjohnson.org) is a Professor of Information and Computer Sciences at the University of Hawaii. His research interests include climate change, educational technology, software engineering, and serious games. He is currently an active developer of [RadGrad](https://radgrad.org), an open source software system based on Javascript, Typescript, React, and Meteor.
+### Course Objectives
+1. Understand the various platforms, formats, and specifications related to big data.
+2. Acquire knowledge of essential algorithms and methodologies to navigate big data and derive actionable intelligence.
+3. Become acquainted with machine learning and contemporary AI-driven models tailored for extracting valuable insights from textual data.
