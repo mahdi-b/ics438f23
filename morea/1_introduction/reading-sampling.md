@@ -9,7 +9,18 @@ morea_labels:
   - Jupyter Notebook
 ---
 
-<br/>
+### Data Sampling to the Rescue
+
+While large datasets can provide rich insights, processing requires computational resources and time. What if there was a way to extract meaningful insights without processing the entire dataset every time? This is the promise of sampling data.
+
+Data sampling allows us to work with a manageable subset of the data, without compromising the quality of insights. Meanwhile, appropriate data representation ensures that we capture the essence of the data in more manageable formats. 
+
+This notebook delves into some simple sampling techniques. Specifically, the notebook covers:
+The foundational principles of sampling and why it's crucial. 
+
+Different strategies for sampling, ensuring we capture the essence of the complete dataset. 
+
+The challenges and nuances of working with time series data.
 
 Notebook can be obtained [here](media/Similarity_hashing_projections.ipynb)
 
