@@ -22,6 +22,6 @@ Different strategies for sampling, ensuring we capture the essence of the comple
 
 The challenges and nuances of working with time series data.
 
-Notebook can be obtained [here](media/Similarity_hashing_projections.ipynb)
+Notebook can be obtained [here](media/Week_1_sampling_strategies.ipynb)
 
 <br/>
