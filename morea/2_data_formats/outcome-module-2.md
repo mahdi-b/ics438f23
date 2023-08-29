@@ -6,7 +6,6 @@ morea_type: outcome
 morea_sort_order: 1
 ---
 
-  * You are familiar with some popular data storage formats and their advantages and limitations
-  * You understand the benefits of memory mapped files for performance
-  * You can use Python to load popular file formats
-  * You understand the mechanisms underlying the datasets library
+  * You'll know popular data storage formats and their pros and cons.
+  * You'll understand how using memory-mapped files can improve performance.
+  * You'll grasp the key functions of the Apache Arrow library.

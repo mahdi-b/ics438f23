@@ -10,10 +10,9 @@ morea_labels:
 
 
 
-The [following blog post](https://aws.amazon.com/blogs/big-data/combine-transactional-and-analytical-data-using-amazon-aurora-and-amazon-redshift/) describes how Amazon Aurora, a transactional processing platform, 
-can be routed for analysis to Redshift, an analytics platform.
+The [linked blog post](https://aws.amazon.com/blogs/big-data/combine-transactional-and-analytical-data-using-amazon-aurora-and-amazon-redshift/) provides an overview of leveraging Amazon Aurora, a transactional processing platform, for analytical purposes through integration with Redshift, an advanced analytics platform.
 
-Several services are covered in the proposed architecture, including Lambda functions, Kinesis data streaming services,  and S3 buckets.
+The architecture presented in the blog post encompasses a range of services, such as Lambda functions, Kinesis data streaming services, and S3 buckets, working together harmoniously.
 
-It is not necessary to apply the tutorial; all you need to do is read and understand the infrastructure.
+While it's not obligatory to follow the tutorial, but I encourage you to "google" pieces of the infrastructure you are not familiar with to better understand how transactional and analytical data are combined in this usecase.
 
