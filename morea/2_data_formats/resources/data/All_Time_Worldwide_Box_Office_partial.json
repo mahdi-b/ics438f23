@@ -1,0 +1,82 @@
+[
+ {
+  "Rank": "1",
+  "Year": "2009",
+  "Movie": "Avatar",
+  "WorldwideBox Office": "$2,845,899,541",
+  "DomesticBox Office": "$760,507,625",
+  "InternationalBox Office": "$2,085,391,916"
+ },
+ {
+  "Rank": "2",
+  "Year": "2019",
+  "Movie": "Avengers: Endgame",
+  "WorldwideBox Office": "$2,797,800,564",
+  "DomesticBox Office": "$858,373,000",
+  "InternationalBox Office": "$1,939,427,564"
+ },
+ {
+  "Rank": "3",
+  "Year": "1997",
+  "Movie": "Titanic",
+  "WorldwideBox Office": "$2,207,986,545",
+  "DomesticBox Office": "$659,363,944",
+  "InternationalBox Office": "$1,548,622,601"
+ },
+ {
+  "Rank": "4",
+  "Year": "2015",
+  "Movie": "Star Wars Ep. VII: The Force Awakens",
+  "WorldwideBox Office": "$2,064,615,817",
+  "DomesticBox Office": "$936,662,225",
+  "InternationalBox Office": "$1,127,953,592"
+ },
+ {
+  "Rank": "5",
+  "Year": "2018",
+  "Movie": "Avengers: Infinity War",
+  "WorldwideBox Office": "$2,044,540,523",
+  "DomesticBox Office": "$678,815,482",
+  "InternationalBox Office": "$1,365,725,041"
+ },
+ {
+  "Rank": "6",
+  "Year": "2015",
+  "Movie": "Jurassic World",
+  "WorldwideBox Office": "$1,669,979,967",
+  "DomesticBox Office": "$652,306,625",
+  "InternationalBox Office": "$1,017,673,342"
+ },
+ {
+  "Rank": "7",
+  "Year": "2019",
+  "Movie": "The Lion King",
+  "WorldwideBox Office": "$1,654,367,425",
+  "DomesticBox Office": "$543,638,043",
+  "InternationalBox Office": "$1,110,729,382"
+ },
+ {
+  "Rank": "8",
+  "Year": "2015",
+  "Movie": "Furious 7",
+  "WorldwideBox Office": "$1,516,881,526",
+  "DomesticBox Office": "$353,007,020",
+  "InternationalBox Office": "$1,163,874,506"
+ },
+ {
+  "Rank": "9",
+  "Year": "2012",
+  "Movie": "The Avengers",
+  "WorldwideBox Office": "$1,515,100,211",
+  "DomesticBox Office": "$623,357,910",
+  "InternationalBox Office": "$891,742,301"
+ },
+ {
+  "Rank": "10",
+  "Year": "2019",
+  "Movie": "Frozen II",
+  "WorldwideBox Office": "$1,446,925,396",
+  "DomesticBox Office": "$477,373,578",
+  "InternationalBox Office": "$969,551,818"
+ }
+]
