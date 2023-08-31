@@ -7450,7 +7450,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4fce05a6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7458,30 +7458,14 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Key-Considerations-for-Big-Data-Formats">Key Considerations for Big Data Formats<a class="anchor-link" href="#Key-Considerations-for-Big-Data-Formats">¶</a></h3><ul>
-<li><p>In light of the TINSTAAFL principle, the following challenges are always posed when choosing a data format for big data projects:</p>
-</li>
-<li><p>Compression</p>
-<ul>
-<li>Different file formats offer varying levels of compressibility with specific algorithms.</li>
-</ul>
-</li>
-<li><p>Splittability</p>
-<ul>
-<li>Evaluate how easily a file format can be split.</li>
+<li>In light of the TINSTAAFL principle, the following challenges are always posed when choosing a data format for big data projects:</li>
+<li><strong>Compression</strong>: Different file formats offer varying levels of compressibility with specific algorithms.</li>
+<li><strong>Splittability</strong>: Evaluate how easily a file format can be split.<ul>
 <li>As highlighted when we discussed the embarrassingly parallel paradigm, the capacity to split a file for distributed processing across multiple machines can be of critical importance.</li>
 </ul>
 </li>
-<li><p>Column vs. Row Storage</p>
-<ul>
-<li>The importance of individual columns (or variables) in your dataset may vary.<ul>
-<li>If column-based calculations are essential, you'll want a format that simplifies column data extraction.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Data Types and Schema Evolution</p>
-<ul>
-<li>Consider whether it's necessary to enforce data types.</li>
+<li><strong>Column vs. Row Storage</strong>: The importance of individual columns (or variables) in your dataset may vary.</li>
+<li><strong>Data Types and Schema Evolution</strong>:  Consider whether it's necessary to enforce data types.<ul>
 <li>Given the scale of big data (think petabytes), it's unrealistic to assume files can be easily regenerated whenever schema changes occur.</li>
 </ul>
 </li>
@@ -7489,20 +7473,17 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ed420e46">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="File-Format:-an-intuition">File Format: an intuition<a class="anchor-link" href="#File-Format:-an-intuition">¶</a></h3><ul>
+<h3 id="File-Format:-an-Intuition">File Format: an Intuition<a class="anchor-link" href="#File-Format:-an-Intuition">¶</a></h3><ul>
 <li>In big data, selecting an appropriate storage format is crucial for optimizing performance, conserving storage space.</li>
 <li>The right choice can lead to time savings, reduced complexity, and lower costs.</li>
-<li>Most of us are familiar with row-based formats:<ul>
-<li>Think MS Excel, where each row represents a table entry.</li>
-</ul>
-</li>
+<li>Most of us are familiar with row-based formats -- think MS Excel, where each row represents a table entry.</li>
 </ul>
 <table>
 <thead>
@@ -7533,39 +7514,42 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c8017d4a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="File-Format:-an-intuition---Cont'd">File Format: an intuition - Cont'd<a class="anchor-link" href="#File-Format:-an-intuition---Cont'd">¶</a></h3><ul>
+<h3 id="File-Format:-an-Intuition---Cont'd">File Format: an Intuition - Cont'd<a class="anchor-link" href="#File-Format:-an-Intuition---Cont'd">¶</a></h3><ul>
 <li><p>The current format may not be suitable for certain data types or operations.</p>
 </li>
-<li><p>Consider a scenario where the sales information contains an extremely large volume of daily transactions—say hundreds of thousands.</p>
+<li><p>E.g.: sales information contains an extremely large volume of daily transactions—say hundreds of thousands.</p>
 <ul>
-<li>In such a case, transaction dates would be redundantly repeated many times, wasting storage space.</li>
+<li>Transaction dates would be redundantly repeated many times, wasting storage space.</li>
 <li>A dictionary-like format, where the key is the transaction date, might be more storage-efficient.</li>
 </ul>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">"01/01/2001"</span><span class="p">:</span> <span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mf">1852.14</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span>  <span class="mf">968.00</span><span class="p">),</span> <span class="o">...</span><span class="p">),</span> <span class="s2">"01/02/2001"</span><span class="p">:(</span><span class="o">...</span><span class="p">),</span> <span class="o">...</span> <span class="p">}</span>
-
-<span class="o">*</span> <span class="n">This</span> <span class="n">approach</span> <span class="n">would</span> <span class="n">also</span> <span class="n">make</span> <span class="n">day</span><span class="o">-</span><span class="n">based</span> <span class="n">calculations</span> <span class="n">more</span> <span class="n">efficient</span><span class="o">.</span>
-  <span class="o">*</span> <span class="n">For</span> <span class="n">instance</span><span class="p">,</span> <span class="n">calculating</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">transactions</span> <span class="ow">or</span> <span class="n">total</span> <span class="n">sales</span> <span class="k">for</span> <span class="n">each</span> <span class="n">day</span><span class="o">.</span>
 </pre></div>
+<ul>
+<li>This format would also make day-based calculations more efficient.<ul>
+<li>For instance, calculating the number of transactions or total sales for each day.</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=68a4e83b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="File-Format:-an-intuition---Cont'd">File Format: an intuition - Cont'd<a class="anchor-link" href="#File-Format:-an-intuition---Cont'd">¶</a></h3><ul>
+<h3 id="File-Format:-an-Intuition---Cont'd">File Format: an Intuition - Cont'd<a class="anchor-link" href="#File-Format:-an-Intuition---Cont'd">¶</a></h3><ul>
 <li>If the objective is to calculate the total sales:<ul>
 <li>In a table format, sifting through millions of lines would be required to determine a single total sales figure.</li>
 <li>Using dates as keys, you'd simply index into each specific date to tally up the total sales.</li>
@@ -7583,6 +7567,7 @@ main {
 <th style="text-align:center"></th>
 <th style="text-align:center"></th>
 <th style="text-align:center"></th>
+<th style="text-align:center"></th>
 </tr>
 </thead>
 <tbody>
@@ -7590,18 +7575,21 @@ main {
 <td style="text-align:left"><strong>Totals</strong></td>
 <td style="text-align:center">1852.14</td>
 <td style="text-align:center">968.00</td>
+<td style="text-align:center">256.21</td>
 <td style="text-align:center"><code>...</code></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>Transaction Dates</strong></td>
 <td style="text-align:center">01/01/2001</td>
 <td style="text-align:center">01/01/2001</td>
+<td style="text-align:center">01/02/2001</td>
 <td style="text-align:center"><code>...</code></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>Nb Items</strong></td>
 <td style="text-align:center">4</td>
 <td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
 <td style="text-align:center"><code>...</code></td>
 </tr>
 </tbody>
@@ -7609,7 +7597,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d14cc7fe">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7632,7 +7620,21 @@ main {
 </div>
 </div>
 </div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=222eba3f-4574-4cb9-9fcf-d9ead9db1924">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c9dfd1dc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7646,7 +7648,102 @@ main {
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2571cc57-8ee6-4147-9146-20ede8ef1e62">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Issue-with-In-Memory-data-Layout">Issue with In Memory data Layout<a class="anchor-link" href="#Issue-with-In-Memory-data-Layout">¶</a></h3><ul>
+<li>What's the issue when data is not stored consecutively in RAM?</li>
+<li>Example: Storing rows but needing to extract a single column.</li>
+<li>This makes data retrieval inefficient.</li>
+<li>Buzzword Alert: It's a "Stride" problem!<ul>
+<li>A "stride" is the gap between data points we're interested in.</li>
+<li>In row based data, to extract columns, we need to skip n−1 columns to get to the next data point in the column.</li>
+<li>This is called "strided access"</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6960b4a0-2719-4435-99a1-445e1c0694c8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Strided-Access">Strided Access<a class="anchor-link" href="#Strided-Access">¶</a></h3><ul>
+<li>Consider the following dat</li>
+<li></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+<ul>
+<li>A typical, "non-strided" access pattern might read every element in the array consecutively from start to finish, like so:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">2</span> <span class="o">-&gt;</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">4</span> <span class="o">-&gt;</span> <span class="mi">5</span> <span class="o">-&gt;</span> <span class="mi">6</span> <span class="o">-&gt;</span> <span class="mi">7</span> <span class="o">-&gt;</span> <span class="mi">8</span> <span class="o">-&gt;</span> <span class="mi">9</span> <span class="o">-&gt;</span> <span class="mi">10</span>
+</pre></div>
+<ul>
+<li>In a strided access pattern with a stride of 2, you would skip every other element:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">5</span> <span class="o">-&gt;</span> <span class="mi">7</span> <span class="o">-&gt;</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d30d8c86-e07e-406b-b914-420081be7a2d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Strided-Access---cont'd">Strided Access - cont'd<a class="anchor-link" href="#Strided-Access---cont'd">¶</a></h3><ul>
+<li><p>you're trying to read down a single column, you'd be skipping $n−1$ elements to get to the next one in that column</p>
+<ul>
+<li>Strided access pattern with a stride of $n$</li>
+</ul>
+</li>
+<li><p>Strided access is generally less efficient than consecutive access due to the way CPU caching mechanisms and memory hierarchies work.</p>
+<ul>
+<li>Less effective use if the cache</li>
+<li>Potentially more time-consuming operations to retrieve the required data.</li>
+<li>Modern CPUs love data that's close together!</li>
+</ul>
+</li>
+<li><p>This is a "data locality" problem.</p>
+<ul>
+<li>More time spent retrieving data</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a7274f5-09fa-43cd-ba4c-406aef75e922">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Caching-and-Performance">Caching and Performance<a class="anchor-link" href="#Caching-and-Performance">¶</a></h3><ul>
+<li>Caches store frequently accessed data.</li>
+<li>Cache Miss occurs when the data isn't in the cache, it takes longer to fetch.</li>
+<li>Strided Access often results in more cache misses.<ul>
+<li>This slows down the application or system.</li>
+</ul>
+</li>
+<li>The issue is covered at lenght  in Concurrent and High-Performance Programming (ICS432),  Operating Systems (ICS332),  Machine-Level and Systems Programming (ICS312)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17d2bb0e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7654,8 +7751,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="1.-Row--and-Column-Based-Formats">1. Row- and Column-Based Formats<a class="anchor-link" href="#1.-Row--and-Column-Based-Formats">¶</a></h3><ul>
-<li><p>Row-based: Best suited when you need to access all the data.</p>
-<ul>
+<li>Row-based: Best suited when you need to access all the data.<ul>
 <li>For instance, when constructing a machine learning model that uses all features and instances.<ul>
 <li>You can sidestep loading the entire dataset into RAM by reading it in chunks (batches).</li>
 <li>This approach necessitates frequent conditional access to multiple columns.</li>
@@ -7663,8 +7759,7 @@ main {
 </li>
 </ul>
 </li>
-<li><p>Column-based storage: Ideal for colun-specific tasks.</p>
-<ul>
+<li>Column-based storage: Ideal for colun-specific tasks.<ul>
 <li>Examples include calculating total sales or even aggregating data by date, among others.</li>
 </ul>
 </li>
@@ -7672,7 +7767,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=366b5853">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7697,7 +7792,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1d7e001a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7730,7 +7825,32 @@ main {
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38afd709-d6d1-458b-818b-4ff740d966cd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Column-Based-Formats">Column-Based Formats<a class="anchor-link" href="#Column-Based-Formats">¶</a></h3><ul>
+<li><p>Disk and network are often the bottlenecks in large, distributed systems.</p>
+</li>
+<li><p>Employing compression minimizes read IO and data transfers, making your analysis faster.</p>
+</li>
+<li><p>Column-based data storage is commonly known as OLAP (Online Analytical Processing).</p>
+<ul>
+<li>OLAP is a computing approach designed to quickly answer multi-dimensional queries.</li>
+<li>More on OLAP when we dicuss platforms.</li>
+</ul>
+</li>
+</ul>
+<div align="center">
+<img alt="No description has been provided for this image" src="https://www.dropbox.com/scl/fi/oqongt8biqxwzrsesl889/olap_dimensions.png?rlkey=qjlqqcby2da2qa4v1b9c7ot31&amp;dl=1" width="1100/"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4cf15a2b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7738,12 +7858,30 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Compression-of-Row-vs.-Columnar-Data">Compression of Row vs. Columnar Data<a class="anchor-link" href="#Compression-of-Row-vs.-Columnar-Data">¶</a></h3><ul>
-<li>Let's perform a quick exrperiment</li>
+<li><p>** Data Homogeneity** : This means that the same compression algorithm can be applied more effectively.</p>
+<ul>
+<li>Example: A column with only integers can be efficiently compressed using an algorithm tailored for integers.</li>
+</ul>
+</li>
+<li><p><strong>Reduced Cardinality</strong>: Columns often have fewer unique values.</p>
+<ul>
+<li>Example: Run-length encoding can be extremely effective in such cases.</li>
+</ul>
+</li>
+<li><p><strong>Range of Values</strong>:  Columns often have a narrow range of values</p>
+<ul>
+<li>Example: Delta encoding could be highly effective here.</li>
+<li>initial data: <code>[100, 105, 110, 101, 100]</code> &gt;encode&gt; <code>100 [5, 10, 1, 0]</code></li>
+<li>Think about <code>diff</code> in code for example.</li>
+</ul>
+</li>
+<li><p><strong>Pedictive models</strong>: use predictive compresison when "good enough" is "good enough"</p>
+</li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b956e59c">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b956e59c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7770,7 +7908,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0a583d68">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0a583d68">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7797,7 +7935,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=85e5d052">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=85e5d052">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7829,7 +7967,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b0b23c8e">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b0b23c8e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7865,7 +8003,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fc0f4f5a">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fc0f4f5a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7900,7 +8038,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ad2327eb">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ad2327eb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7926,7 +8064,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f565ea35">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f565ea35">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7959,32 +8097,7 @@ main {
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38afd709-d6d1-458b-818b-4ff740d966cd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Column-Based-Formats">Column-Based Formats<a class="anchor-link" href="#Column-Based-Formats">¶</a></h3><ul>
-<li><p>Disk and network are often the bottlenecks in large, distributed systems.</p>
-</li>
-<li><p>Employing compression minimizes read IO and data transfers, making your analysis faster.</p>
-</li>
-<li><p>Column-based data storage is commonly known as OLAP (Online Analytical Processing).</p>
-<ul>
-<li>OLAP is a computing approach designed to quickly answer multi-dimensional queries.</li>
-<li>More on OLAP when we dicuss platforms.</li>
-</ul>
-</li>
-</ul>
-<div align="center">
-<img alt="No description has been provided for this image" src="https://www.dropbox.com/scl/fi/oqongt8biqxwzrsesl889/olap_dimensions.png?rlkey=qjlqqcby2da2qa4v1b9c7ot31&amp;dl=1" width="1100/"/>
-</div>
-</div>
-</div>
-</div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6a083d77">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7995,7 +8108,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2279abc9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8010,7 +8123,7 @@ main {
 <ul>
 <li>Not efficient with CRUD operations</li>
 <li>Difficult to access all features of a single instance<ul>
-<li>Need to parse all columns to position $i$</li>
+<li>Need to parse all columns to read items at position $i$</li>
 </ul>
 </li>
 <li>Hard to read by a human</li>
@@ -8019,7 +8132,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b31a4a3e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8048,7 +8161,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba2c5229">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8069,7 +8182,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c5de7933">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8087,14 +8200,14 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=71ebb546">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3--Splitability---Row-based">3- Splitability - Row-based<a class="anchor-link" href="#3--Splitability---Row-based">¶</a></h3><p>Row-based formats can be split along row boundaries</p>
+<h3 id="3--Splitability---Row-Based">3- Splitability - Row-Based<a class="anchor-link" href="#3--Splitability---Row-Based">¶</a></h3><p>Row-based formats can be split along row boundaries</p>
 <pre><code># file 1 with n lines
 01/01/2001           4            1852.14
 01/01/2001           3            968.00
@@ -8120,14 +8233,14 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=380f3d5a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3--Splitability-row-based,-nested">3- Splitability row-based, nested<a class="anchor-link" href="#3--Splitability-row-based,-nested">¶</a></h3><ul>
+<h3 id="3--Splitability:-Row-Based,-Nested">3- Splitability: Row-Based, Nested<a class="anchor-link" href="#3--Splitability:-Row-Based,-Nested">¶</a></h3><ul>
 <li>Larg column-based data can be more difficult to split</li>
 </ul>
 <pre><code>file 2
@@ -8145,14 +8258,14 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46aad4d4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3--Splitability:-Column-based,-nested">3- Splitability: Column-based, nested<a class="anchor-link" href="#3--Splitability:-Column-based,-nested">¶</a></h3><ul>
+<h3 id="3--Splitability:-Column-Based,-Nested">3- Splitability: Column-Based, Nested<a class="anchor-link" href="#3--Splitability:-Column-Based,-Nested">¶</a></h3><ul>
 <li>A column-based format can be split if the comutation is column-specific.</li>
 </ul>
 <pre><code># file 3
@@ -8178,7 +8291,7 @@ totals: 1852.14, 968.00
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e3e3a8c1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8207,7 +8320,7 @@ totals: 1852.14, 968.00
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8be6279c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8244,7 +8357,7 @@ JOBTITLE_1\sSALARY_1\tJOBTITLE_2\sSALARY_2\tJOBTITLE_3\sSALARY_3
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=96f0ff77">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8277,7 +8390,7 @@ Making Software,"Oram, Andy",computer_science,232,O'Reilly
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c9ae2028">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8305,62 +8418,17 @@ Making Software,"Oram, Andy",computer_science,232,O'Reilly
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9e31127d">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=70a5b2c2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># All_Time_Worldwide_Box_Office_partial.csv</span>
 <span class="kn">import</span> <span class="nn">csv</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'All_Time_Worldwide_Box_Office.csv'</span><span class="p">)</span>  <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
-    <span class="n">movies_file</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">'"'</span><span class="p">)</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> 
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">movies_file</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Line </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span><span class="mi">10</span><span class="p">:</span>
-            <span class="k">break</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Line 0: ['Rank', 'Year', 'Movie', 'WorldwideBox Office', 'DomesticBox Office', 'InternationalBox Office']
-Line 1: ['1', '2009', 'Avatar', '$2,845,899,541', '$760,507,625', '$2,085,391,916']
-Line 2: ['2', '2019', 'Avengers: Endgame', '$2,797,800,564', '$858,373,000', '$1,939,427,564']
-Line 3: ['3', '1997', 'Titanic', '$2,207,986,545', '$659,363,944', '$1,548,622,601']
-Line 4: ['4', '2015', 'Star Wars Ep. VII: The Force Awakens', '$2,064,615,817', '$936,662,225', '$1,127,953,592']
-Line 5: ['5', '2018', 'Avengers: Infinity War', '$2,044,540,523', '$678,815,482', '$1,365,725,041']
-Line 6: ['6', '2015', 'Jurassic World', '$1,669,979,967', '$652,306,625', '$1,017,673,342']
-Line 7: ['7', '2019', 'The Lion King', '$1,654,367,425', '$543,638,043', '$1,110,729,382']
-Line 8: ['8', '2015', 'Furious 7', '$1,516,881,526', '$353,007,020', '$1,163,874,506']
-Line 9: ['9', '2012', 'The Avengers', '$1,515,100,211', '$623,357,910', '$891,742,301']
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=70a5b2c2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># All_Time_Worldwide_Box_Office_partial.csv</span>
-<span class="kn">import</span> <span class="nn">csv</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'All_Time_Worldwide_Box_Office.csv'</span><span class="p">)</span>  <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'data/All_Time_Worldwide_Box_Office.csv'</span><span class="p">)</span>  <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
     <span class="n">movies_file</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">'"'</span><span class="p">)</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> 
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">movies_file</span><span class="p">:</span>
@@ -8395,7 +8463,7 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9a748ae3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8424,7 +8492,7 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bdb872ea">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8432,26 +8500,21 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="JSON-File-Format">JSON File Format<a class="anchor-link" href="#JSON-File-Format">¶</a></h3><ul>
-<li><p>JSON (JavaScript Object Notation)</p>
-</li>
-<li><p>Open standard file format that uses human-readable text</p>
-<ul>
+<li>JSON (JavaScript Object Notation)</li>
+<li>Open standard file format that uses human-readable text<ul>
 <li>FIle typically stored using <code>.json</code> extension</li>
 </ul>
 </li>
-<li><p>Became popular as a space-saving alternative to Extensible Markup Language (XML)</p>
-</li>
-<li><p>Inspired by JavaScript objects but is a language-independent data format</p>
-</li>
-<li><p>Very similar to the combination of Python's lists and dicts</p>
-</li>
-<li><p>Also supported natively in Python</p>
+<li>Became popular as a space-saving alternative to Extensible Markup Language (XML)</li>
+<li>Inspired by JavaScript objects but is a language-independent data format</li>
+<li>Very similar to the combination of Python's lists and dicts</li>
+<li>Also supported natively in Python</li>
+</ul>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
-</li>
-<li><p>The defacto language of the web</p>
 <ul>
+<li>The defacto language of the web<ul>
 <li>Supported in all modern languages and particularly web languages.</li>
 </ul>
 </li>
@@ -8459,7 +8522,7 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ec11c99f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8485,15 +8548,15 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </li>
 </ul>
 </li>
-<li><p>See the following for more details: <a href="https://docs.fileformat.com/web/json/">https://docs.fileformat.com/web/json/</a></p>
+<li><p><a href="https://docs.fileformat.com/web/json/">See the following for more details</a></p>
 </li>
-<li><p>See the following very good (useful) validator for validating JSON files or records: <a href="https://jsonformatter.curiousconcept.com/#">https://jsonformatter.curiousconcept.com/#</a></p>
+<li><p><a href="https://jsonformatter.curiousconcept.com/#">See the following very good (useful) validator for validating JSON files or records</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=16187bc2">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=16187bc2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8530,7 +8593,7 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=10c69d70">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8545,7 +8608,7 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9cd4c7b6">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9cd4c7b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8575,7 +8638,7 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5d42c6ca">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8613,7 +8676,7 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -8630,7 +8693,7 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>[{'Rank': '1',
   'Year': '2009',
@@ -8654,12 +8717,12 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7341ee4b">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7341ee4b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">movies_data</span><span class="p">)</span>
@@ -8673,19 +8736,19 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>list</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0d5c94f2">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0d5c94f2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">movies_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -8699,19 +8762,19 @@ Line 9: {'Rank': '10', 'Year': '2019', 'Movie': 'Frozen II', 'WorldwideBox Offic
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>dict</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eac5ab41">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eac5ab41">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">movies_data</span><span class="p">:</span>
@@ -8743,7 +8806,7 @@ The movie Frozen II, grossed $1,446,925,396 in 2019
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2091ef8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8768,7 +8831,7 @@ The movie Frozen II, grossed $1,446,925,396 in 2019
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=174d7204">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8781,10 +8844,12 @@ The movie Frozen II, grossed $1,446,925,396 in 2019
 <li>Leverages some of the advantages of JSON while mitigating some of its disadvantages</li>
 </ul>
 </li>
-<li><p>Uses a file definition (a schema itself written in JSON) and stores data without the repeated field names.</p>
+<li><p>Uses a file definition (a schema itself written in JSON) and stores data</p>
 <ul>
 <li>Said to be self-descriptive because you can include the schema and documentation in the header of the file containing the data</li>
 </ul>
+</li>
+<li><p>Serializes the data in a compact binary format</p>
 </li>
 <li><p>Released by the Hadoop working group in 2009 to use with Hadoop Systems</p>
 </li>
@@ -8798,7 +8863,82 @@ The movie Frozen II, grossed $1,446,925,396 in 2019
 </div>
 </div>
 </div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e51046a4-4f5f-44af-b5ab-b2e604938022">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### AVRO Schema</span>
+<span class="p">{</span>
+  <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"record"</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Student"</span><span class="p">,</span>
+  <span class="s2">"namespace"</span><span class="p">:</span> <span class="s2">"hawaii.edu"</span><span class="p">,</span>
+  <span class="s2">"fields"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"first_name"</span><span class="p">,</span>
+      <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"last_name"</span><span class="p">,</span>
+      <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"major"</span><span class="p">,</span>
+      <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"DOB"</span><span class="p">,</span>
+      <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"student_id"</span><span class="p">,</span>
+      <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8c387d57-118c-4be2-9c27-0b252b8bd3f5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="AVRO-Data">AVRO Data<a class="anchor-link" href="#AVRO-Data">¶</a></h3><ul>
+<li><p>For fixed-length types like integers, floats, or fixed-length arrays, we know the exact number of bytes to read.</p>
+</li>
+<li><p>For instance, a 32-bit integer will always be 4 bytes.</p>
+</li>
+<li><p>In text numbers or other data types are often represented as human-readable text</p>
+<ul>
+<li>4162554 takes seven bytes in a text-based format like JSON (4, 1, 6, 2, 5, 5, 4).</li>
+</ul>
+</li>
+<li><p>For variable-length data types like strings, Avro typically uses a length-prefix encoding.</p>
+<ul>
+<li>length of the data is written first, followed by the actual data.</li>
+<li>This allows Avro to know exactly how many bytes to read for each value.<ul>
+<li>Length: 2, Data: H, I</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>For complex types like arrays or records, Avro uses the schema to determine the structure and types of nested values.</p>
+</li>
+<li><p>Does not need to use special characters for delimiters, the encoding is more compact.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b1779595">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">

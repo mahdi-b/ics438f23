@@ -11,5 +11,5 @@ morea_labels:
 
 <br/>
 
-The notebook can be obtained [here](resources/data_Formats.ipynb)
+The notebook can be obtained [here](resources/Week_2_1_data_formats.ipynb)
 <br/>
