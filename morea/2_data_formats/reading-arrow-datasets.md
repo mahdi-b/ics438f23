@@ -10,5 +10,5 @@ morea_labels:
 ---
 
 <br/>
-The notebook can be obtained [here](resources/Apache_Arrow_and_Datasets.ipynb)
+The notebook can be obtained [here](resources/Week_2_2_Apache_Arrow_and_Parquet_tutorial.ipynb)
 <br/>
