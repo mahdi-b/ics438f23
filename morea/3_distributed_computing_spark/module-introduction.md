@@ -9,6 +9,7 @@ morea_readings:
   - reading-split-apply-combine
   - reading-databricks-ebook
   - reading-databricks-cheatsheet
+  - reading-map-reduce
 morea_experiences:
 morea_type: module
 morea_icon_url: /morea/3_distributed_computing_spark/dist_computing.jpg
