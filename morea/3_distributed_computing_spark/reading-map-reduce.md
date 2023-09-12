@@ -12,6 +12,6 @@ morea_labels:
 
 The Map-Reduce model is a programming framework for processing large datasets across distributed servers. This method is essential for big data analytics tasks.
 
-[This](resources/intro_map_reduce.ipyn) provides a foundational introduction to the Map-Reduce concept, and key insights used in data analytics.
+[This](resources/intro_map_reduce.ipynb) provides a foundational introduction to the Map-Reduce concept, and key insights used in data analytics.
 
 <br/>
