@@ -7,6 +7,7 @@ morea_outcomes:
   - outcome-module-3
 morea_readings:
   - reading-split-apply-combine
+  - reading-creating-data-brick-account
   - reading-databricks-ebook
   - reading-databricks-cheatsheet
   - reading-map-reduce
