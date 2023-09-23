@@ -37,3 +37,9 @@ handle, scrutinize, and illustrate extensive datasets.
 1. Understand the various platforms, formats, and specifications related to big data.
 2. Acquire knowledge of essential algorithms and methodologies to navigate big data and derive actionable intelligence.
 3. Become acquainted with machine learning and contemporary AI-driven models tailored for extracting valuable insights from textual data.
+
+### Information and reminders
+
+- - Assignment 1 is posted. Detials about how to clone the repo can be found [here](https://github.com/ICS-CLASSROOM/ICS438F23_assignment_1).
+
+
