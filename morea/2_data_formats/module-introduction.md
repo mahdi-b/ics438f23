@@ -8,6 +8,7 @@ morea_outcomes:
 morea_readings:
   - reading-data-formats
   - reading-arrow-datasets
+  - reading-arrow-bonus-questions
 morea_experiences:
   - experience-oltp-olap
   - experience-reading-parquet-files
