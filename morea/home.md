@@ -42,4 +42,6 @@ handle, scrutinize, and illustrate extensive datasets.
 
 - - Assignment 1 is posted. Detials about how to clone the repo can be found [here](https://github.com/ICS-CLASSROOM/ICS438F23_assignment_1).
 
-
+<br/>
+<br/>
+Attendance site can be accessed <a href="https://www.cognitoforms.com/MahdiBelcaid/AttendanceICS438F23"> here.</a>
