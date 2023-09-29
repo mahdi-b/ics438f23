@@ -11,6 +11,8 @@ morea_readings:
   - reading-databricks-ebook
   - reading-databricks-cheatsheet
   - reading-map-reduce
+  - reading-spark-introduction-1
+  - reading-spark-introduction-1
 morea_experiences:
 morea_type: module
 morea_icon_url: /morea/3_distributed_computing_spark/dist_computing.jpg
