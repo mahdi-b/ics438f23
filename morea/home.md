@@ -44,4 +44,6 @@ handle, scrutinize, and illustrate extensive datasets.
 
 <br/>
 <br/>
-Attendance site can be accessed <a href="https://www.cognitoforms.com/MahdiBelcaid/AttendanceICS438F23"> here.</a>
+Attendance form can be accessed <a href="https://www.cognitoforms.com/MahdiBelcaid/AttendanceICS438F23"> here.</a>
+
+
