@@ -13,3 +13,5 @@ This set question is designed to provide you with some basic experience working 
 We will explore these questions together in class.
 
 The notebook can be downloaded [here](resources/spark_exercises.ipynb).
+
+The notebook produced in class can be downloaded [here](resources/spark_exercises_in_class_solutions.ipynb).
