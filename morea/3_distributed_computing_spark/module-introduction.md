@@ -13,12 +13,12 @@ morea_readings:
   - reading-map-reduce
   - reading-spark-introduction-1
   - reading-spark-introduction-1
-  - experience-using-spark
 morea_experiences:
+  - experience-using-spark
 morea_type: module
 morea_icon_url: /morea/3_distributed_computing_spark/dist_computing.jpg
 morea_start_date: "2023-09-12"
-morea_end_date: "2023-09-22"
+morea_end_date: "2023-09-28"
 morea_labels:
 morea_sort_order: 3
 ---
