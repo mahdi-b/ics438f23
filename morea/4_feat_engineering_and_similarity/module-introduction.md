@@ -5,7 +5,7 @@ morea_coming_soon: false
 morea_id: feature-engineering
 morea_outcomes:
 morea_readings:
-  - feature_engineering-intro
+  - feature-engineering-intro
 morea_experiences:
 morea_type: module
 morea_icon_url: /morea/3_distributed_computing_spark/dist_computing.jpg
