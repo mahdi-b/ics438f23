@@ -1,6 +1,6 @@
 ---
 title: "Using and Interacting with LLMs"
-published: false
+published: true
 morea_coming_soon: false
 morea_id: using-llms
 morea_outcomes:
@@ -11,7 +11,7 @@ morea_readings:
   - using-langchain
 morea_experiences:
 morea_type: module
-morea_icon_url: /morea/3_distributed_computing_spark/dist_computing.jpg
+morea_icon_url: /morea/5_interacting_with_llms/llm.png
 morea_start_date: "2023-10-24"
 morea_end_date: "2023-11-02"
 morea_labels:

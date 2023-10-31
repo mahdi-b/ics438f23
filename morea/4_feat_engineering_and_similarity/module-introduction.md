@@ -8,7 +8,7 @@ morea_readings:
   - feature-engineering-intro
 morea_experiences:
 morea_type: module
-morea_icon_url: /morea/3_distributed_computing_spark/dist_computing.jpg
+morea_icon_url: /morea/4_feat_engineering_and_similarity/feature_engineering.png
 morea_start_date: "2023-10-03"
 morea_end_date: "2023-10-10"
 morea_labels:
