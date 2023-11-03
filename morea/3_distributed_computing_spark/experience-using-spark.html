@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> ICS 438 F23 | Using Spark </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/ics438f23/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/ics438f23/css/style.css">
+  <link rel="stylesheet" href="/ics438f23/css/syntax.css">
+  <link rel="shortcut icon" href="/ics438f23/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/020726ec0d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/ics438f23/index.html"> ICS 438 F23 </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/ics438f23/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/ics438f23/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/ics438f23/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/ics438f23/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/ics438f23/assessments/">Assessments</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/ics438f23/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/ics438f23/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/ics438f23/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/ics438f23/modules/map-reduce">Distributed Computing and Spark</a></li>
+        <li class="breadcrumb-item active">Using Spark</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <p>This set question is designed to provide you with some basic experience working with Spark. I strongly recommend you review the material covered in class before working through these questions. For your convenience, a Spark DataFrame-specific cheat sheet is available <a href="https://images.datacamp.com/image/upload/v1676302905/Marketing/Blog/PySpark_SQL_Cheat_Sheet.pdf">here</a>.
+We will explore these questions together in class.</p>
+
+<p>The notebook can be downloaded <a href="resources/spark_exercises.ipynb">here</a>.</p>
+
+<p>The notebook produced in class can be downloaded <a href="resources/spark_exercises_in_class_solutions.ipynb">here</a>.</p>
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/ics438f23/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <p>Mahdi Belcaid | Information and Computer Sciences | University of Hawaii <br />
+https://www.github.com/mahdi-b <br /></p>
+
+
+    
+    <p style="margin: 0">Powered by the <a class="footer-link" href="https://morea-framework.github.io/">Morea Framework</a> (Theme: spacelab)<br>
+      Last update on: <span>2023-11-02 22:25:10 -1000</span></p>
+
+    <p style="margin: 0">
+      
+      5 modules
+      
+      | 4 outcomes
+      
+      
+      | 19 readings
+      
+      
+      | 6 experiences
+      
+      
+      | 0 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Add anchors to pages. -->
+<script>anchors.add();</script>
+
+
+</body>
+</html>
